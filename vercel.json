@@ -1,6 +1,7 @@
 {
-  "version": 2,
-  "name": "factory-layout-sigma",
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": "",
   "cleanUrls": true,
   "headers": [
     {
