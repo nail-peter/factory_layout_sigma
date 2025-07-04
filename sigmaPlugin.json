@@ -2,46 +2,76 @@
   "name": "Factory Floor Layout",
   "version": "1.0.0",
   "type": "visualization",
-  "source": "main.js",
+  "source": "sigma-factory-plugin.js",
   "description": "Interactive 2D factory floor layout showing real-time manufacturing telemetry",
   "author": "Manufacturing Analytics Team",
-  "inputs": [
+  "configOptions": [
     {
-      "name": "telemetry_data",
-      "type": "table",
-      "description": "Manufacturing telemetry data with station metrics"
-    }
-  ],
-  "config": [
-    {
-      "name": "layout_scale",
-      "type": "number",
-      "label": "Layout Scale",
-      "description": "Scale factor for the factory floor layout",
-      "default": 1.0,
-      "min": 0.5,
-      "max": 2.0,
-      "step": 0.1
+      "name": "data_source",
+      "type": "element",
+      "label": "Telemetry Data Source",
+      "description": "Select the data table containing manufacturing telemetry"
     },
     {
-      "name": "show_temperature",
-      "type": "boolean",
-      "label": "Show Temperature Overlay",
-      "description": "Display temperature heat map overlay",
+      "name": "station_id",
+      "type": "column",
+      "source": "data_source",
+      "label": "Station ID Column",
+      "description": "Column containing station identifiers (ST-01, ST-02, etc.)",
+      "allowMultiple": false
+    },
+    {
+      "name": "production_line",
+      "type": "column",
+      "source": "data_source",
+      "label": "Production Line Column",
+      "description": "Column containing production line names (LINE-A, LINE-B, LINE-C)",
+      "allowMultiple": false
+    },
+    {
+      "name": "temperature",
+      "type": "column",
+      "source": "data_source",
+      "label": "Temperature Column",
+      "description": "Column containing temperature readings in Celsius",
+      "allowMultiple": false
+    },
+    {
+      "name": "pressure",
+      "type": "column",
+      "source": "data_source",
+      "label": "Pressure Column",
+      "description": "Column containing pressure readings in PSI",
+      "allowMultiple": false
+    },
+    {
+      "name": "vibration",
+      "type": "column",
+      "source": "data_source",
+      "label": "Vibration Column",
+      "description": "Column containing vibration readings in mm/s",
+      "allowMultiple": false
+    },
+    {
+      "name": "quality_score",
+      "type": "column",
+      "source": "data_source",
+      "label": "Quality Score Column",
+      "description": "Column containing quality score percentages",
+      "allowMultiple": false
+    },
+    {
+      "name": "show_temperature_effects",
+      "type": "toggle",
+      "label": "Show Temperature Effects",
+      "description": "Display temperature glow effects for high temperatures",
       "default": true
     },
     {
-      "name": "show_vibration",
-      "type": "boolean",
-      "label": "Show Vibration Overlay",
-      "description": "Display vibration ripple effects",
-      "default": true
-    },
-    {
-      "name": "show_quality",
-      "type": "boolean",
-      "label": "Show Quality Indicators",
-      "description": "Display quality score color coding",
+      "name": "show_vibration_effects",
+      "type": "toggle",
+      "label": "Show Vibration Effects",
+      "description": "Display vibration ripple effects for high vibration",
       "default": true
     }
   ]
