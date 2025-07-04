@@ -1,0 +1,28 @@
+{
+  "name": "factory-layout-sigma",
+  "version": "1.0.0",
+  "description": "Interactive factory floor layout visualization plugin for Sigma Computing",
+  "main": "main.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "sigma-computing",
+    "manufacturing",
+    "visualization",
+    "factory-floor",
+    "telemetry",
+    "d3js"
+  ],
+  "author": "Manufacturing Analytics Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nail-peter/factory_layout_sigma.git"
+  },
+  "homepage": "https://github.com/nail-peter/factory_layout_sigma#readme"
+}
