@@ -1,0 +1,48 @@
+{
+  "name": "Factory Floor Layout",
+  "version": "1.0.0",
+  "type": "visualization",
+  "source": "main.js",
+  "description": "Interactive 2D factory floor layout showing real-time manufacturing telemetry",
+  "author": "Manufacturing Analytics Team",
+  "inputs": [
+    {
+      "name": "telemetry_data",
+      "type": "table",
+      "description": "Manufacturing telemetry data with station metrics"
+    }
+  ],
+  "config": [
+    {
+      "name": "layout_scale",
+      "type": "number",
+      "label": "Layout Scale",
+      "description": "Scale factor for the factory floor layout",
+      "default": 1.0,
+      "min": 0.5,
+      "max": 2.0,
+      "step": 0.1
+    },
+    {
+      "name": "show_temperature",
+      "type": "boolean",
+      "label": "Show Temperature Overlay",
+      "description": "Display temperature heat map overlay",
+      "default": true
+    },
+    {
+      "name": "show_vibration",
+      "type": "boolean",
+      "label": "Show Vibration Overlay",
+      "description": "Display vibration ripple effects",
+      "default": true
+    },
+    {
+      "name": "show_quality",
+      "type": "boolean",
+      "label": "Show Quality Indicators",
+      "description": "Display quality score color coding",
+      "default": true
+    }
+  ]
+}
