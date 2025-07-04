@@ -347,8 +347,12 @@ function createPlugin(element, config) {
   if (typeof d3 === 'undefined') {
     const script = document.createElement('script');
     script.src = 'https://d3js.org/d3.v7.min.js';
+    script.crossOrigin = 'anonymous';
     script.onload = () => {
-      new FactoryFloorLayout(element, config);
+      return new FactoryFloorLayout(element, config);
+    };
+    script.onerror = () => {
+      console.error('Failed to load D3.js');
     };
     document.head.appendChild(script);
   } else {
